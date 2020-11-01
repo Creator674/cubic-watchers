@@ -21,10 +21,10 @@ const forms = [
 
 
 let isDisco = false;
-let colorNumber = Math.floor(Math.random() * bodyBGC.length) + 1;
+let colorNumber = 1;
 
 function changeBGC() {
-  if(colorNumber === bodyBGC.length){
+  if(colorNumber >= bodyBGC.length){
     colorNumber = 0;
   }
 
@@ -34,7 +34,7 @@ function changeBGC() {
     setTimeout(() => changeBGC(), 1500);
   }
 
-  colorNumber += 1;
+  colorNumber +=  1;
 }
 
 colorBtn.addEventListener("click", () => {
@@ -101,7 +101,7 @@ document.addEventListener("mousemove", (e) => {
   if(isColoring){
     if(e.target.className === "watcher"){
       e.target.style.transition = "0s";
-      e.target.style.backgroundColor = "red";
+      e.target.style.backgroundColor = bodyBGC[colorNumber-1];
 
       setTimeout(() => {
         e.target.style.backgroundColor = watcherBGC[colorNumber-1];
