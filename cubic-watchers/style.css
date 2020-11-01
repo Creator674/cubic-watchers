@@ -39,14 +39,15 @@ button {
   border-radius: 10px;
 }
 
-.color-button {
+.color-button, .disco-button, .change-button {
   width: 60px;
   height: 60px;
   border: none;
   background: transparent;
+  transition: 0.5s;
 }
 
-.color-button--icon {
+.color-button--icon, .disco-button--icon, .change-button--icon {
   width: 40px;
   height: 40px;
   filter: invert(97%) sepia(89%) saturate(424%) hue-rotate(308deg) brightness(97%) contrast(109%);
@@ -54,8 +55,8 @@ button {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(11, 40px);
-  grid-template-rows: repeat(11, 40px);
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(8, 40px);
   grid-gap: 1.5rem;
 }
 
@@ -64,4 +65,5 @@ button {
   background-position: 50%;
   background-repeat: no-repeat;
   transition: background-color 1s ease-in-out;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
 }
