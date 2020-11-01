@@ -65,5 +65,6 @@ button {
   background-position: 50%;
   background-repeat: no-repeat;
   transition: background-color 1s ease-in-out;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  transition: clip-path 1s ease-in-out;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0);
 }
