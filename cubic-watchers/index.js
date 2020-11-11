@@ -92,11 +92,41 @@ shadowBtn.addEventListener("click", () => {
 })
 
 
-
-
 document.addEventListener("mousemove", (e) => {
   const mouseX = e.pageX;
   const mouseY = e.pageY;
+
+  if(isColoring){
+    if(e.target.className === "watcher"){
+      e.target.style.transition = "0s";
+      e.target.style.backgroundColor = bodyBGC[colorNumber-1];
+
+      setTimeout(() => {
+        e.target.style.backgroundColor = watcherBGC[colorNumber-1];
+        e.target.style.transition = "background-color 1s ease-in-out, clip-path 1s ease-in-out";
+      }, 1500)
+  }
+  }
+
+  watchers.forEach((sqr) => {
+    const sqrX = sqr.offsetLeft + 20;
+    const sqrY = sqr.offsetTop + 20;
+
+    const diffX = mouseX - sqrX;
+    const diffY = mouseY - sqrY;
+
+    const radians = Math.atan2(diffY, diffX);
+
+    const angle = (radians * 180) / Math.PI;
+    sqr.style.transform = `rotate(${angle}deg)`;
+
+  });
+}, false);
+
+
+document.addEventListener("touchmove", (e) => {
+  const mouseX = e.targetTouches[0].clientX;
+  const mouseY = e.targetTouches[0].clientY;
 
   if(isColoring){
     if(e.target.className === "watcher"){
