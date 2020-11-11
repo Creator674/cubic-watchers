@@ -74,6 +74,7 @@ button {
 
 @media (max-width: 630px) {
   body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
