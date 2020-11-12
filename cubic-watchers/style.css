@@ -51,10 +51,29 @@ button {
   filter: invert(99%) sepia(59%) saturate(1714%) hue-rotate(297deg) brightness(113%) contrast(103%);
 }
 
-.color-button--icon, .disco-button--icon, .change-button--icon, .shadow-button--icon {
+.color-button--icon, .disco-button--icon, .change-button--icon, .shadow-button--icon, .shadow-button--pc {
   width: 40px;
   height: 40px;
   filter: invert(97%) sepia(89%) saturate(424%) hue-rotate(308deg) brightness(97%) contrast(109%);
+}
+
+.shadow-button--pc {
+  display: none;
+}
+
+.pc--animation {
+  animation: 1.2s ease-in-out infinite trambling-animation;
+}
+@keyframes trambling-animation {
+  0%, 50%, 100% {
+      transform: rotate(0deg);
+  }
+  10%, 30% {
+      transform: rotate(-10deg);
+  }
+  20%, 40% {
+      transform: rotate(10deg);
+  }
 }
 
 .wrapper {
